@@ -1,6 +1,7 @@
 import type {
   CalendarBlock,
   CookieIdea,
+  CookieLaunch,
   CookieRecipe,
   Ingredient,
   ProductionSpec,
@@ -107,6 +108,133 @@ export const cookieIdeas: CookieIdea[] = [
   },
 ];
 
+
+
+const launchChecklistLabels = [
+  "Recipe finalized",
+  "Costing complete",
+  "Packaging selected",
+  "Label/allergen review complete",
+  "Product photos complete",
+  "Menu description written",
+  "Social posts scheduled",
+  "Order form ready",
+  "Production date scheduled",
+  "Launch date confirmed",
+] as const;
+
+function buildLaunchChecklist(completedLabels: string[]) {
+  return launchChecklistLabels.map((label) => ({
+    id: label.toLowerCase().replaceAll("/", "-").replaceAll(" ", "-"),
+    label,
+    complete: completedLabels.includes(label),
+  }));
+}
+
+export const cookieLaunches: CookieLaunch[] = [
+  {
+    id: "launch-1",
+    cookieName: "Brown Butter Sea Salt Chocolate Chip",
+    launchName: "Signature Launch",
+    launchDate: "2026-06-28",
+    productionDate: "2026-06-26",
+    status: "Ready",
+    targetChannel: "Website",
+    expectedBatchQuantity: 144,
+    menuPrice: 4.75,
+    checklistProgress: 100,
+    nextAction: "Final approval pass on homepage feature copy before opening sales.",
+    readinessColumn: "Ready",
+    checklist: buildLaunchChecklist([...launchChecklistLabels]),
+  },
+  {
+    id: "launch-2",
+    cookieName: "Pistachio Rose White Chocolate",
+    launchName: "Valentine’s Drop",
+    launchDate: "2027-02-08",
+    productionDate: "2027-02-06",
+    status: "Planning",
+    targetChannel: "Preorder",
+    expectedBatchQuantity: 96,
+    menuPrice: 5.25,
+    checklistProgress: 60,
+    nextAction: "Complete allergen review and confirm rose-toned gift box packaging.",
+    readinessColumn: "Planning",
+    checklist: buildLaunchChecklist([
+      "Recipe finalized",
+      "Costing complete",
+      "Menu description written",
+      "Order form ready",
+      "Launch date confirmed",
+      "Production date scheduled",
+    ]),
+  },
+  {
+    id: "launch-3",
+    cookieName: "Espresso Toffee",
+    launchName: "Weekend Feature",
+    launchDate: "2026-06-14",
+    productionDate: "2026-06-13",
+    status: "Live",
+    targetChannel: "Instagram",
+    expectedBatchQuantity: 72,
+    menuPrice: 4.95,
+    checklistProgress: 90,
+    nextAction: "Monitor weekend sell-through and save customer feedback for review.",
+    readinessColumn: "Live",
+    checklist: buildLaunchChecklist([
+      "Recipe finalized",
+      "Costing complete",
+      "Packaging selected",
+      "Label/allergen review complete",
+      "Product photos complete",
+      "Menu description written",
+      "Social posts scheduled",
+      "Order form ready",
+      "Production date scheduled",
+    ]),
+  },
+  {
+    id: "launch-4",
+    cookieName: "Lemon Lavender Shortbread",
+    launchName: "Spring Tea Box",
+    launchDate: "2027-04-18",
+    productionDate: "2027-04-16",
+    status: "Delayed",
+    targetChannel: "Farmers Market",
+    expectedBatchQuantity: 120,
+    menuPrice: 4.5,
+    checklistProgress: 50,
+    nextAction: "Finish product photography after glaze stability retest is approved.",
+    readinessColumn: "Waiting on Photos",
+    checklist: buildLaunchChecklist([
+      "Recipe finalized",
+      "Costing complete",
+      "Packaging selected",
+      "Menu description written",
+      "Production date scheduled",
+    ]),
+  },
+  {
+    id: "launch-5",
+    cookieName: "Dark Chocolate Cherry Almond",
+    launchName: "Holiday Gift Box",
+    launchDate: "2026-12-12",
+    productionDate: "2026-12-10",
+    status: "Planning",
+    targetChannel: "Wholesale",
+    expectedBatchQuantity: 240,
+    menuPrice: 5.5,
+    checklistProgress: 30,
+    nextAction: "Cost dried cherry and almond options before quoting wholesale gift boxes.",
+    readinessColumn: "Waiting on Costing",
+    checklist: buildLaunchChecklist([
+      "Recipe finalized",
+      "Packaging selected",
+      "Launch date confirmed",
+    ]),
+  },
+];
 
 export const finalizedRecipes: CookieRecipe[] = [
   {
