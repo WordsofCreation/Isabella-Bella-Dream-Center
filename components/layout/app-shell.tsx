@@ -12,8 +12,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="min-h-screen cream-gradient lg:flex">
-      <aside className="sidebar-gradient sticky top-0 z-30 flex h-auto flex-col border-r border-white/10 px-4 py-5 text-white lg:h-screen lg:w-72">
-        <div className="mb-7 flex items-center gap-3 px-2">
+      <aside className="sidebar-gradient sticky top-0 z-30 flex h-auto flex-col border-r border-white/10 px-4 py-4 text-white lg:h-screen lg:w-72 lg:py-5">
+        <div className="mb-4 flex items-center gap-3 px-2 lg:mb-7">
           <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/15 bg-white/10 font-serif text-xl font-bold shadow-lg">IB</div>
           <div>
             <p className="font-serif text-xl font-bold tracking-tight">Isabella Bella</p>
@@ -21,7 +21,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           </div>
         </div>
 
-        <nav className="grid gap-1 lg:flex-1">
+        <nav className="flex gap-1 overflow-x-auto pb-1 lg:grid lg:flex-1 lg:overflow-visible lg:pb-0">
           {navigationItems.map((item) => {
             const isActive = pathname === item.href;
             return (
@@ -29,12 +29,12 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "flex items-center gap-3 rounded-2xl px-3 py-2.5 text-sm font-semibold text-white/68 transition hover:bg-white/10 hover:text-white",
+                  "flex shrink-0 items-center gap-3 rounded-2xl px-3 py-2.5 text-sm font-semibold text-white/68 transition hover:bg-white/10 hover:text-white",
                   isActive && "bg-white/14 text-white shadow-inner",
                 )}
               >
                 <span className="flex h-5 w-5 items-center justify-center rounded-md bg-white/10 text-[10px] font-bold text-[#d7a279]">{item.icon}</span>
-                {item.title}
+                <span className="whitespace-nowrap">{item.title}</span>
               </Link>
             );
           })}

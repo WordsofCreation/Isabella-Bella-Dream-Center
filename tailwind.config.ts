@@ -40,6 +40,10 @@ const config: Config = {
       boxShadow: {
         soft: "0 18px 45px rgba(71, 43, 31, 0.08)",
       },
+      fontFamily: {
+        sans: ['"Inter"', '"Avenir Next"', '"Segoe UI"', 'system-ui', 'sans-serif'],
+        serif: ['"Playfair Display"', 'Georgia', 'Cambria', 'serif'],
+      },
     },
   },
   plugins: [],
