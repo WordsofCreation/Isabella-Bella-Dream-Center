@@ -14,6 +14,6 @@ export const navigationItems = [
 
 export const overviewStats = [
   { label: "Shell Routes", value: "11", icon: "SR" },
-  { label: "Mock Ideas", value: "3", icon: "MI" },
+  { label: "Mock Ideas", value: "8", icon: "MI" },
   { label: "Integrations", value: "Later", icon: "IL" },
 ];
