@@ -3,6 +3,7 @@ export type CookieIdeaStatus = "Idea" | "Testing" | "Approved" | "Archived";
 export type RecipeTestResult = "Needs Work" | "Retest" | "Approved";
 export type RecipeStatus = "Ready for Production" | "Needs Costing" | "Seasonal" | "Archived";
 export type CostingStatus = "Costed" | "Needs Costing" | "Refresh Pricing" | "Archived";
+export type IngredientWarning = "High cost ingredient" | "Price needs update" | "Allergen" | "Needs vendor confirmation";
 export type LaunchStatus = "Planning" | "Ready" | "Live" | "Complete";
 export type PaymentStatus = "Unpaid" | "Deposit Paid" | "Paid";
 export type FulfillmentStatus = "Queued" | "In Production" | "Ready" | "Fulfilled";
@@ -73,9 +74,20 @@ export interface Ingredient {
   vendor: string;
   purchaseUnit: string;
   purchasePrice: number;
-  costPerOunce: number;
+  purchaseUnitWeightOz: number;
+  yieldPercentage: number;
   allergenTag: string;
   lastPriceUpdate: string;
+  warningFlags: IngredientWarning[];
+}
+
+export interface RecipeCostSnapshot {
+  id: string;
+  recipeName: string;
+  totalRecipeCost: number;
+  recipeYield: number;
+  suggestedMenuPrice: number;
+  costingStatus: CostingStatus;
 }
 
 export interface CustomerOrder {
