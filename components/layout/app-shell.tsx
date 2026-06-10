@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+  const activeItem = navigationItems.find((item) => item.href === pathname) ?? navigationItems[0];
 
   return (
     <div className="min-h-screen cream-gradient lg:flex">
@@ -59,7 +60,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.24em] text-muted-foreground">Premium bakery command center</p>
-              <h1 className="font-serif text-2xl font-bold tracking-tight md:text-3xl">Isabella Bella Dream Center</h1>
+              <h1 className="font-serif text-2xl font-bold tracking-tight md:text-3xl">{activeItem.title}</h1>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <div className="relative min-w-0 sm:w-80">

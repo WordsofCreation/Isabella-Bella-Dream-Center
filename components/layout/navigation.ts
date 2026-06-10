@@ -13,7 +13,7 @@ export const navigationItems = [
 ] as const;
 
 export const overviewStats = [
-  { label: "Approved Recipes", value: "12", icon: "AR" },
-  { label: "Active Tests", value: "4", icon: "AT" },
-  { label: "Food Cost Avg.", value: "29%", icon: "FC" },
+  { label: "Shell Routes", value: "11", icon: "SR" },
+  { label: "Mock Ideas", value: "3", icon: "MI" },
+  { label: "Integrations", value: "Later", icon: "IL" },
 ];
