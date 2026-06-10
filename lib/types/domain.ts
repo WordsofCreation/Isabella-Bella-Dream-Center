@@ -4,7 +4,8 @@ export type RecipeTestResult = "Needs Work" | "Retest" | "Approved";
 export type RecipeStatus = "Ready for Production" | "Needs Costing" | "Seasonal" | "Archived";
 export type CostingStatus = "Costed" | "Needs Costing" | "Refresh Pricing" | "Archived";
 export type IngredientWarning = "High cost ingredient" | "Price needs update" | "Allergen" | "Needs vendor confirmation";
-export type LaunchStatus = "Planning" | "Ready" | "Live" | "Complete";
+export type LaunchStatus = "Planning" | "Ready" | "Live" | "Complete" | "Delayed";
+export type LaunchChannel = "Website" | "Instagram" | "Farmers Market" | "Preorder" | "Wholesale";
 export type PaymentStatus = "Unpaid" | "Deposit Paid" | "Paid";
 export type FulfillmentStatus = "Queued" | "In Production" | "Ready" | "Fulfilled";
 export type ContentType = "Photo" | "Reel" | "Story" | "Email" | "Website" | "Menu Update";
@@ -124,12 +125,26 @@ export interface CalendarBlock {
   notes: string;
 }
 
+export interface LaunchChecklistItem {
+  id: string;
+  label: string;
+  complete: boolean;
+}
+
 export interface CookieLaunch {
   id: string;
   cookieName: string;
+  launchName: string;
   launchDate: string;
+  productionDate: string;
   status: LaunchStatus;
-  checklist: string[];
+  targetChannel: LaunchChannel;
+  expectedBatchQuantity: number;
+  menuPrice: number;
+  checklistProgress: number;
+  nextAction: string;
+  readinessColumn: "Planning" | "Waiting on Costing" | "Waiting on Photos" | "Ready" | "Live";
+  checklist: LaunchChecklistItem[];
 }
 
 export interface MarketingTask {
