@@ -6,8 +6,8 @@ export type CostingStatus = "Costed" | "Needs Costing" | "Refresh Pricing" | "Ar
 export type IngredientWarning = "High cost ingredient" | "Price needs update" | "Allergen" | "Needs vendor confirmation";
 export type LaunchStatus = "Planning" | "Ready" | "Live" | "Complete" | "Delayed";
 export type LaunchChannel = "Website" | "Instagram" | "Farmers Market" | "Preorder" | "Wholesale";
-export type PaymentStatus = "Unpaid" | "Deposit Paid" | "Paid";
-export type FulfillmentStatus = "Queued" | "In Production" | "Ready" | "Fulfilled";
+export type PaymentStatus = "Unpaid" | "Deposit Paid" | "Paid" | "Refunded";
+export type FulfillmentStatus = "New" | "Queued" | "In Production" | "Ready" | "Fulfilled" | "Delayed";
 export type ContentType = "Photo" | "Reel" | "Story" | "Email" | "Website" | "Menu Update";
 
 export interface CookieIdea {
@@ -91,16 +91,27 @@ export interface RecipeCostSnapshot {
   costingStatus: CostingStatus;
 }
 
+export interface CustomerOrderItem {
+  flavor: string;
+  quantity: number;
+}
+
 export interface CustomerOrder {
   id: string;
+  orderNumber: string;
   customerName: string;
-  orderItems: string[];
-  quantity: number;
+  orderItems: CustomerOrderItem[];
+  totalQuantity: number;
+  pickupDeliveryType: "Pickup" | "Delivery";
   pickupDeliveryDate: string;
+  pickupDeliveryWindow: string;
   paymentStatus: PaymentStatus;
   fulfillmentStatus: FulfillmentStatus;
+  totalPrice: number;
   specialNotes: string;
   allergensFlagged: string[];
+  packagingNeeds: string[];
+  boxesNeeded: number;
 }
 
 export type ProductionCalendarPeriod = "Morning" | "Midday" | "Afternoon" | "Evening";
