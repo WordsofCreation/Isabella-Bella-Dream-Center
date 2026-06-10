@@ -102,12 +102,25 @@ export interface CustomerOrder {
   allergensFlagged: string[];
 }
 
+export type ProductionCalendarPeriod = "Morning" | "Midday" | "Afternoon" | "Evening";
+export type ProductionCalendarBlockType =
+  | "Production"
+  | "Chilling"
+  | "Baking"
+  | "Cooling"
+  | "Test Batch"
+  | "Packaging"
+  | "Pickup/Delivery"
+  | "Marketing"
+  | "Prep";
+
 export interface CalendarBlock {
   id: string;
   day: string;
+  period: ProductionCalendarPeriod;
   time: string;
   title: string;
-  type: "Production" | "Test Batch" | "Packaging" | "Pickup/Delivery" | "Marketing" | "Prep";
+  type: ProductionCalendarBlockType;
   notes: string;
 }
 
