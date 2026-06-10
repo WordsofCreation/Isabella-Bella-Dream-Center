@@ -15,6 +15,8 @@ export interface CookieIdea {
   seasonOrOccasion: string;
   status: CookieIdeaStatus;
   priority: Priority;
+  createdDate: string;
+  nextAction: string;
 }
 
 export interface RecipeTest {
