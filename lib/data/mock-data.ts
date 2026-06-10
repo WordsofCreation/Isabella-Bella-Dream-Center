@@ -8,6 +8,8 @@ import type {
   RecipeCostSnapshot,
   RecipeReadinessItem,
   CustomerOrder,
+  MarketingTask,
+  Template,
 } from "@/lib/types/domain";
 
 export const cookieIdeas: CookieIdea[] = [
@@ -1134,3 +1136,124 @@ export const foodCostSnapshots = [
     grossProfitPerCookie: "$3.73",
   },
 ] as const;
+
+
+export const marketingTasks: MarketingTask[] = [
+  {
+    id: "marketing-1",
+    title: "Signature launch Instagram carousel",
+    dueDate: "Jun 17",
+    contentType: "Photo",
+    campaignStatus: "Ready",
+    channel: "Instagram",
+    notes: "Use hero product photo, founder note, flavor details, and preorder reminder for Brown Butter Sea Salt Chocolate Chip.",
+  },
+  {
+    id: "marketing-2",
+    title: "Behind-the-scenes dough reel",
+    dueDate: "Jun 18",
+    contentType: "Reel",
+    campaignStatus: "Scheduled",
+    channel: "Instagram Reels",
+    notes: "Film brown butter pour, chocolate fold-in, tray loading, and final salt finish. Keep the tone refined and operational.",
+  },
+  {
+    id: "marketing-3",
+    title: "Preorder opening email",
+    dueDate: "Jun 20",
+    contentType: "Email",
+    campaignStatus: "Draft",
+    channel: "Newsletter",
+    notes: "Short founder letter, quantity limit, pickup window, storage note, and gift-box positioning.",
+  },
+  {
+    id: "marketing-4",
+    title: "Website menu banner copy",
+    dueDate: "Jun 21",
+    contentType: "Website",
+    campaignStatus: "Ready",
+    channel: "Website",
+    notes: "Feature the launch name, flavor summary, availability, allergen note, and placeholder order call-to-action.",
+  },
+  {
+    id: "marketing-5",
+    title: "Launch morning story sequence",
+    dueDate: "Jun 28",
+    contentType: "Story",
+    campaignStatus: "Draft",
+    channel: "Instagram Stories",
+    notes: "Three-frame story: now live, production detail, and limited pickup reminder. No real order link until integrations are added.",
+  },
+  {
+    id: "marketing-6",
+    title: "Monthly menu update note",
+    dueDate: "Jun 30",
+    contentType: "Menu Update",
+    campaignStatus: "Published",
+    channel: "Internal menu board",
+    notes: "Mock published item to show completed campaign state for review.",
+  },
+];
+
+export const templates: Template[] = [
+  {
+    id: "template-1",
+    name: "New Cookie R&D Template",
+    category: "R&D",
+    description: "Capture flavor concept, audience, inspiration, test objective, constraints, and founder decision notes.",
+  },
+  {
+    id: "template-2",
+    name: "Weekly Production Plan",
+    category: "Production",
+    description: "Plan weekly batch quantities, bake windows, cooling time, packaging needs, and pickup handoffs.",
+  },
+  {
+    id: "template-3",
+    name: "Cookie Launch Checklist",
+    category: "Launch",
+    description: "Coordinate recipe readiness, costing, labels, photography, menu copy, content, and production timing.",
+  },
+  {
+    id: "template-4",
+    name: "Ingredient Costing Sheet",
+    category: "Costing",
+    description: "Review vendor pricing, usable yield, cost per ounce, allergens, margin targets, and price-update warnings.",
+  },
+  {
+    id: "template-5",
+    name: "Holiday Cookie Drop Plan",
+    category: "Seasonal",
+    description: "Prepare limited drop flavors, packaging counts, preorder windows, production capacity, and reminder cadence.",
+  },
+  {
+    id: "template-6",
+    name: "Farmers Market Prep Plan",
+    category: "Events",
+    description: "Organize market menu, sample plan, display supplies, packaging, cash/change needs, and end-of-day reconciliation.",
+  },
+  {
+    id: "template-7",
+    name: "Wholesale Inquiry Tracker",
+    category: "Wholesale",
+    description: "Track prospective accounts, sample status, pricing discussions, follow-up dates, and next best actions.",
+  },
+  {
+    id: "template-8",
+    name: "Social Media Launch Plan",
+    category: "Marketing",
+    description: "Map launch posts, stories, reels, photography tasks, email ideas, and channel-specific status checks.",
+  },
+  {
+    id: "template-9",
+    name: "Monthly Flavor Calendar",
+    category: "Planning",
+    description: "Lay out seasonal cues, test batches, launch dates, production guardrails, and menu rotation notes.",
+  },
+  {
+    id: "template-10",
+    name: "Packaging Prep Checklist",
+    category: "Packaging",
+    description: "Confirm boxes, labels, allergen stickers, sleeves, inserts, ribbon, storage bins, and staging sequence.",
+  },
+];
