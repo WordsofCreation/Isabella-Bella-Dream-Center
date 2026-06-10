@@ -1,6 +1,8 @@
 export type Priority = "Low" | "Medium" | "High";
 export type CookieIdeaStatus = "Idea" | "Testing" | "Approved" | "Archived";
 export type RecipeTestResult = "Needs Work" | "Retest" | "Approved";
+export type RecipeStatus = "Ready for Production" | "Needs Costing" | "Seasonal" | "Archived";
+export type CostingStatus = "Costed" | "Needs Costing" | "Refresh Pricing" | "Archived";
 export type LaunchStatus = "Planning" | "Ready" | "Live" | "Complete";
 export type PaymentStatus = "Unpaid" | "Deposit Paid" | "Paid";
 export type FulfillmentStatus = "Queued" | "In Production" | "Ready" | "Fulfilled";
@@ -35,12 +37,34 @@ export interface RecipeTest {
 export interface CookieRecipe {
   id: string;
   cookieName: string;
+  status: RecipeStatus;
   yield: string;
+  batchSize: string;
   portionSize: string;
+  doughWeightPerCookie: string;
   bakeTemperature: string;
   bakeTime: string;
+  coolingTime: string;
+  shelfLife: string;
   storageNotes: string;
-  allergenNotes: string[];
+  productionNotes: string;
+  allergenNotes: string;
+  costingStatus: CostingStatus;
+  lastUpdatedDate: string;
+}
+
+export interface ProductionSpec {
+  id: string;
+  label: string;
+  value: string;
+  detail: string;
+}
+
+export interface RecipeReadinessItem {
+  id: string;
+  label: string;
+  count: number;
+  detail: string;
 }
 
 export interface Ingredient {
