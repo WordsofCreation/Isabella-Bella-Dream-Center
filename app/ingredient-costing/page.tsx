@@ -188,7 +188,7 @@ export default function IngredientCostingPage() {
               />
               <ActionPanel
                 title="Recipe margin check"
-                detail="Run a placeholder costing flow against target food-cost ranges."
+                detail="Run a local costing flow against target food-cost ranges."
                 action="Cost Recipe"
               />
             </div>

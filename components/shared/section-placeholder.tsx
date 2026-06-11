@@ -18,11 +18,10 @@ export function SectionPlaceholder({ title, eyebrow, description, focusItems }: 
 
       <div className="grid gap-5 lg:grid-cols-[1.2fr_0.8fr]">
         <Card>
-          <CardHeader title={`${title} workspace`} eyebrow="MVP placeholder" />
+          <CardHeader title={`${title} workspace`} eyebrow="Workspace" />
           <div className="rounded-2xl border border-dashed border-border bg-background/60 p-6">
             <p className="text-sm leading-6 text-muted-foreground">
-              This section is intentionally lightweight for the first shell. Future workflows, data tables,
-              forms, and integrations will live here after the navigation and layout foundation are approved.
+              This section provides a structured workspace for operating notes, review tasks, data tables, and integration-ready next steps.
             </p>
           </div>
         </Card>

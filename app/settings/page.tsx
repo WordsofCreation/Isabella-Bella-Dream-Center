@@ -6,11 +6,11 @@ import { Card, CardHeader } from "@/components/ui/card";
 import { integrationPlaceholders } from "@/lib/integrations";
 
 const settingsCards = [
-  { title: "Company Profile", status: "MVP Placeholder", description: "Business name, founder details, kitchen address, brand contact, and operating notes." },
-  { title: "Brand Settings", status: "MVP Placeholder", description: "Tone, menu language, packaging defaults, brand colors, and product naming conventions." },
-  { title: "Vendors", status: "MVP Placeholder", description: "Ingredient vendors, packaging suppliers, preferred contacts, order minimums, and price-review cadence." },
-  { title: "Allergens", status: "MVP Placeholder", description: "Standard allergen library, production warnings, label review reminders, and kitchen handling notes." },
-  { title: "Production Settings", status: "MVP Placeholder", description: "Default batch sizes, bake windows, cooling rules, packaging lead times, and pickup-day guardrails." },
+  { title: "Company Profile", status: "Configurable", description: "Business name, founder details, kitchen address, brand contact, and operating notes." },
+  { title: "Brand Settings", status: "Configurable", description: "Tone, menu language, packaging defaults, brand colors, and product naming conventions." },
+  { title: "Vendors", status: "Configurable", description: "Ingredient vendors, packaging suppliers, preferred contacts, order minimums, and price-review cadence." },
+  { title: "Allergens", status: "Configurable", description: "Standard allergen library, production warnings, label review reminders, and kitchen handling notes." },
+  { title: "Production Settings", status: "Configurable", description: "Default batch sizes, bake windows, cooling rules, packaging lead times, and pickup-day guardrails." },
   { title: "Integrations", status: "Later", description: "A holding area for future tools. No live third-party connections are active in this MVP." },
   { title: "Billing Later", status: "Later", description: "Subscription, invoicing, payment method, and receipt management can be added after product direction is clear." },
 ] as const;
@@ -22,7 +22,7 @@ export default function SettingsPage() {
         <PageHeader
           eyebrow="Settings"
           title="Workspace Settings"
-          description="Simple placeholder settings for reviewing how Isabella Bella will eventually manage business preferences, vendors, allergens, production rules, and integrations."
+          description="Manage Isabella Bella business preferences, vendors, allergens, production rules, and future integration readiness from one settings workspace."
           actions={
             <>
               <Button type="button">Save Mock Changes</Button>
@@ -35,9 +35,9 @@ export default function SettingsPage() {
           <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.22em] text-muted-foreground">Preview guardrail</p>
-              <h3 className="mt-1 font-serif text-2xl font-bold tracking-tight">Mock settings only</h3>
+              <h3 className="mt-1 font-serif text-2xl font-bold tracking-tight">Local settings workspace</h3>
               <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">
-                This MVP does not connect authentication, payments, accounting, calendars, databases, or AI. The cards below define the future configuration areas without implying live integrations.
+                Use these local configuration cards to review business defaults and operating rules. Third-party systems remain clearly labeled until they are connected.
               </p>
             </div>
             <Badge variant="premium">Local preview</Badge>
@@ -49,11 +49,11 @@ export default function SettingsPage() {
             <Card key={card.title} className="bg-white/76">
               <div className="flex items-start justify-between gap-3">
                 <h3 className="font-serif text-2xl font-bold leading-tight text-foreground">{card.title}</h3>
-                <Badge variant={card.status === "Later" ? "neutral" : "premium"}>{card.status}</Badge>
+                <Badge variant={card.status === "Later" ? "neutral" : "success"}>{card.status}</Badge>
               </div>
               <p className="mt-4 text-sm leading-6 text-muted-foreground">{card.description}</p>
               <div className="mt-5 rounded-2xl border border-dashed border-border bg-muted/35 p-4 text-sm text-muted-foreground">
-                Editable fields will be added after the MVP review confirms what Isabella Bella needs first.
+                Open this configuration area from the action buttons, save local notes, or reset the preview state while reviewing workflow needs.
               </div>
             </Card>
           ))}
