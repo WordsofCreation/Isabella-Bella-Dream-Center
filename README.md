@@ -50,7 +50,7 @@ Mocked areas include:
 - Launch planning checklists
 - Customer orders and fulfillment states
 - Marketing calendar tasks and campaign statuses
-- Template cards and settings placeholders
+- Template cards and settings review workflows
 - Future integration lists
 
 ## Future roadmap

@@ -31,7 +31,7 @@ export default function TemplatesPage() {
           actions={
             <>
               <Button type="button">Use Template</Button>
-              <Button type="button" variant="outline">Create Later</Button>
+              <Button type="button" variant="outline">Create Template</Button>
             </>
           }
         />
@@ -50,7 +50,7 @@ export default function TemplatesPage() {
           <Card className="border-[#d8b08c]/60 bg-[#fffaf2]">
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground">MVP note</p>
             <p className="mt-3 text-lg font-bold tracking-tight">No document generation yet</p>
-            <p className="mt-2 text-sm text-muted-foreground">Buttons are placeholders until real storage and workflow creation are added.</p>
+            <p className="mt-2 text-sm text-muted-foreground">Use these actions to preview template workflows, duplicate operating plans, and route notes through quick capture.</p>
           </Card>
         </section>
 
@@ -75,7 +75,7 @@ export default function TemplatesPage() {
                   </div>
                   <div className="mt-5 flex flex-wrap gap-2">
                     <Button type="button" size="sm">Preview</Button>
-                    <Button type="button" size="sm" variant="outline">Duplicate Later</Button>
+                    <Button type="button" size="sm" variant="outline">Duplicate</Button>
                   </div>
                 </Card>
               );
